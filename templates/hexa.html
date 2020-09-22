@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>hexa</title>
+        {% load static %}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {% include 'snippets/snip.html' %}
+           <h1 style="text-align: center; font-style: oblique;color: chocolate;">Hexagonal Rod</h1><br><br>
+           <div class="row col-md-4 col-md-push-5">
+            <table>
+                <tr>
+                    <td>
+                        <select id = "myList" name="list">
+                            <option value = "0.0068">steel</option>
+                            <option value = "0.0077">copper</option>
+                            <option value = "0.00736">brass</option>
+                            <option value = "0.00242">aluminium</option>
+                          </select>
+                    </td>
+                </tr>
+                <tr>u7
+                    <td>Enter width:</td>
+                    <td><input type="number" name="w" id="wid" placeholder="values in mm" ></td>
+                </tr>
+                <tr>
+                    <td>Enter length:</td>
+                    <td><input type="number" name="l" id="lid" placeholder="values in Meter" ></td>
+                </tr>
+            </table>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary">save</button><br><br>
+                    <p style="font-size: x-large;">Weight={{res}} kg</p>
+                    <a href="/home/">HOME</a>
+                </td>
+            </tr>
+           </div>
+        </form>
+    </body>
+</html>
